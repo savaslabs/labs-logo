@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { LabsLogo } from "./components/LabsLogo";
+import { ColorPicker } from "./components/ColorPicker";
 
-function App() {
+const App = () => {
+  const [background, setBackground] = useState("#F35A69");
+  const [textColor, setTextColor] = useState("#F9FAFB");
+  const [ava, setAva] = useState("#221c35");
+  const [goggles, setGoggles] = useState("#F9FAFB");
+  const [avaOutline, setAvaOutline] = useState("none");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <div className="row">
+        <div className="column column-sm">
+          <ColorPicker
+            for="background"
+            current={background}
+            onChange={setBackground}
+          />
+          <br />
+          <ColorPicker for="text" current={textColor} onChange={setTextColor} />
+          <br />
+          <ColorPicker for="ava" current={ava} onChange={setAva} />
+          <br />
+          <ColorPicker for="goggles" current={goggles} onChange={setGoggles} />
+          <br />
+          <ColorPicker
+            for="ava-outline"
+            current={avaOutline}
+            onChange={setAvaOutline}
+          />
+        </div>
+        <div className="column column-lg">
+          <LabsLogo
+            background={background}
+            textColor={textColor}
+            ava={ava}
+            goggles={goggles}
+            avaOutline={avaOutline}
+          />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

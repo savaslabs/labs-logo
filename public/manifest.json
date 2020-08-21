@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Labs by Savas Labs",
+  "name": "Labs: A place for experimentation at Savas Labs.",
   "icons": [
     {
       "src": "favicon.ico",
